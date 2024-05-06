@@ -21,6 +21,14 @@ const registerController = async (req, res) => {
         error,
       });
     }
+    // now checked if existingUser not true then fruther i will save my user to mongo db
+    const user = await UserModel.create({username, email, password, phone, address });
+    res.status(201).send({
+        success: true, 
+        message: `${username} registered successfully !`,
+    })
+
+
   } catch (error) {
     console.log(error.message);
     res.status(500).send({
