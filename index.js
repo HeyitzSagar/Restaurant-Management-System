@@ -19,8 +19,9 @@ app.use(express.json());
 // routes related to test
 
     app.use("/api/v1/test", testRoutes );
+
 // routes related to authentication
-    app.use("/api", AuthRoutes )
+    app.use("/api/v1/auth", AuthRoutes )
 
 
 
